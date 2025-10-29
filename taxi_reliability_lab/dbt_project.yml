@@ -1,15 +1,29 @@
-taxi_reliability_lab:
-  target: dev
-  outputs:
-    dev:
-      type: bigquery
-      method: service-account
-      keyfile: "{{ env_var('GOOGLE_APPLICATION_CREDENTIALS') }}"
-      project: "{{ env_var('BIGQUERY_PROJECT') }}"
-      dataset: "{{ env_var('BIGQUERY_DATASET') }}"
-      location: "{{ env_var('BIGQUERY_LOCATION', 'US') }}"
-      threads: 4
-      priority: interactive
-      timeout_seconds: 300
-      retries: 1
-      maximum_bytes_billed: 1000000000  # 1 GB safety
+# dbt project config (BigQuery)
+name: taxi_reliability_lab
+version: "1.0"
+config-version: 2
+
+# IMPORTANT: this must match your profiles/profiles.yml entry
+profile: taxi_reliability_lab
+
+# Where things live
+model-paths: ["models"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+test-paths: ["tests"]
+analysis-paths: ["analyses"]
+snapshot-paths: ["snapshots"]
+target-path: "target"     # compiled SQL & artifacts
+clean-targets: ["target", "dbt_packages"]
+
+# Optional: sensible defaults
+models:
+  +materialized: view
+  taxi_reliability_lab:
+    marts:
+      +materialized: table
+    semantic:
+      +materialized: table
+
+# If you’re using packages.yml (e.g., Elementary), keep this line as-is
+require-dbt-version: ">=1.6.0"
