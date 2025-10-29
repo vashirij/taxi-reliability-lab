@@ -1,0 +1,41 @@
+[0m04:24:35.666213 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71e4121d5010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71e41261d710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71e414cdca90>]}
+
+
+============================== 04:24:35.763975 | 57f92890-e871-41de-8e44-d701f2aa9345 ==============================
+[0m04:24:35.763975 [info ] [MainThread]: Running with dbt=1.10.13
+[0m04:24:35.764652 [debug] [MainThread]: running dbt with arguments {'empty': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'introspect': 'True', 'log_format': 'default', 'send_anonymous_usage_stats': 'True', 'write_json': 'True', 'version_check': 'True', 'warn_error': 'None', 'log_cache_events': 'False', 'cache_selected_only': 'False', 'static_parser': 'True', 'profiles_dir': '/home/vscode/.dbt', 'target_path': 'None', 'use_experimental_parser': 'False', 'partial_parse': 'True', 'invocation_command': 'dbt init taxi_reliability_lab', 'indirect_selection': 'eager', 'fail_fast': 'False', 'log_path': 'logs', 'no_print': 'None', 'debug': 'False', 'use_colors': 'True'}
+[0m04:24:35.821461 [info ] [MainThread]: Creating dbt configuration folder at /home/vscode/.dbt
+[0m04:24:35.824014 [debug] [MainThread]: Starter project path: /home/vscode/.local/lib/python3.11/site-packages/dbt/include/starter_project
+[0m04:24:35.869796 [info ] [MainThread]: 
+Your new dbt project "taxi_reliability_lab" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m04:24:35.870875 [info ] [MainThread]: Setting up your profile.
+[0m04:44:36.874693 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75d13eff6710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75d141b3a450>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75d13f047bd0>]}
+
+
+============================== 04:44:36.879806 | b7107d99-e219-4484-9517-da46da9ebfe7 ==============================
+[0m04:44:36.879806 [info ] [MainThread]: Running with dbt=1.10.13
+[0m04:44:36.880487 [debug] [MainThread]: running dbt with arguments {'target_path': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'debug': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'printer_width': '80', 'no_print': 'None', 'send_anonymous_usage_stats': 'True', 'version_check': 'True', 'fail_fast': 'False', 'log_cache_events': 'False', 'log_path': 'logs', 'quiet': 'False', 'write_json': 'True', 'indirect_selection': 'eager', 'warn_error': 'None', 'static_parser': 'True', 'invocation_command': 'dbt deps', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'partial_parse': 'True', 'log_format': 'default', 'profiles_dir': '/home/vscode/.dbt', 'introspect': 'True'}
+[0m04:44:36.881145 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /workspaces/taxi-reliability-lab/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m04:44:36.882461 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": false, "command_wall_clock_time": 0.056067318, "process_in_blocks": "8336", "process_kernel_time": 0.261169, "process_mem_max_rss": "100156", "process_out_blocks": "8", "process_user_time": 1.181245}
+[0m04:44:36.882992 [debug] [MainThread]: Command `dbt deps` failed at 04:44:36.882856 after 0.06 seconds
+[0m04:44:36.883390 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75d13efdebd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75d13f0395d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75d13eff6a90>]}
+[0m04:44:36.883808 [debug] [MainThread]: Flushing usage events
+[0m04:44:36.961642 [debug] [MainThread]: An error was encountered while trying to flush usage events

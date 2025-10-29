@@ -1,0 +1,11 @@
+{
+  "name": "dbt-bigquery",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
+  "features": { "ghcr.io/devcontainers/features/node:1": {} },
+  "postCreateCommand": "pip install --upgrade pip && pip install dbt-core dbt-bigquery elementary-data great-expectations && python -m pip install --upgrade google-cloud-bigquery",
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-python.python", "batisteo.vscode-dbt", "batisteo.vscode-dbt-power-user"]
+    }
+  }
+}

@@ -1,0 +1,15 @@
+taxi_reliability_lab:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      keyfile: "{{ env_var('GOOGLE_APPLICATION_CREDENTIALS') }}"
+      project: "{{ env_var('BIGQUERY_PROJECT') }}"
+      dataset: "{{ env_var('BIGQUERY_DATASET') }}"
+      location: "{{ env_var('BIGQUERY_LOCATION', 'US') }}"
+      threads: 4
+      priority: interactive
+      timeout_seconds: 300
+      retries: 1
+      maximum_bytes_billed: 1000000000  # 1 GB safety

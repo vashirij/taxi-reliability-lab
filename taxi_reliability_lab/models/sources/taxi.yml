@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: nyc_taxi
+    database: bigquery-public-data
+    schema: new_york_taxi_trips
+    tables:
+      - name: trips
+        freshness:
+          warn_after: {count: 3, period: day}
+          error_after: {count: 5, period: day}
+
+  - name: noaa
+    database: bigquery-public-data
+    schema: ghcn_d
+    tables:
+      - name: ghcn_d
