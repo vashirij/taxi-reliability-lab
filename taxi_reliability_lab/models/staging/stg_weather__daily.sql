@@ -6,7 +6,7 @@ with daily as (
     any_value(if(element='PRCP', value/10.0, null)) as prcp_mm,
     any_value(if(element='TMAX', value/10.0, null)) as tmax_c,
     any_value(if(element='TMIN', value/10.0, null)) as tmin_c
-  from {{ source('noaa','ghcn_d') }}
+  from {{ ref('ghcn_d') }}
   where station like 'USW%'
   group by date, station
 ),

@@ -1,17 +1,16 @@
 version: 2
-
 sources:
   - name: nyc_taxi
-    database: bigquery-public-data
-    schema: new_york_taxi_trips
+    database: "{{ env_var('BIGQUERY_PROJECT') }}"
+    schema: "{{ env_var('BIGQUERY_DATASET') }}"
     tables:
       - name: trips
+        loaded_at_field: pickup_datetime
         freshness:
           warn_after: {count: 3, period: day}
           error_after: {count: 5, period: day}
-
   - name: noaa
-    database: bigquery-public-data
-    schema: ghcn_d
+    database: "{{ env_var('BIGQUERY_PROJECT') }}"
+    schema: "{{ env_var('BIGQUERY_DATASET') }}"
     tables:
       - name: ghcn_d

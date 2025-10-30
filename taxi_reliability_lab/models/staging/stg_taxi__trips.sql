@@ -12,7 +12,7 @@ with raw as (
     total_amount,
     payment_type,
     rate_code
-  from {{ source('nyc_taxi','trips') }}
+  from {{ ref('trips') }}
   where pickup_datetime is not null
 )
 select * from raw

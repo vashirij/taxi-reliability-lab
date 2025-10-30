@@ -1,0 +1,15 @@
+version: 2
+models:
+  - name: stg_taxi__trips
+    columns:
+      - name: trip_id
+        tests: [not_null, unique]
+  - name: fct_trips
+    columns:
+      - name: trip_id
+        tests: [not_null, unique]
+  - name: fct_trips_daily
+    columns:
+      - name: trip_date
+        tests: [not_null]
+
